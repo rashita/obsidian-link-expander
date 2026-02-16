@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-link-expander",
+	"name": "Link Expander",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Open all internal links in the current note in new tabs.",
+	"author": "Tadanori",
+	"authorUrl": "https://github.com/Tadanori",
+	"isDesktopOnly": false
+}
