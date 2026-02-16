@@ -47,7 +47,7 @@ const context = await esbuild.context({
     logLevel: "info",
     sourcemap: prod ? false : "inline",
     treeShaking: true,
-    outfile: "/Users/Tadanori/Library/CloudStorage/Dropbox/textbox_node/local/data/.obsidian/plugins/obsidian-link-expander/main.js",
+    outfile: "main.js",
 });
 
 import { copyFileSync, mkdirSync, existsSync } from "fs";
@@ -59,10 +59,15 @@ if (!existsSync(targetDir)) {
     mkdirSync(targetDir, { recursive: true });
 }
 
-copyFileSync("manifest.json", `${targetDir}/manifest.json`);
-if (existsSync("styles.css")) {
-    copyFileSync("styles.css", `${targetDir}/styles.css`);
-}
+const copyFiles = () => {
+    copyFileSync("main.js", `${targetDir}/main.js`);
+    copyFileSync("manifest.json", `${targetDir}/manifest.json`);
+    if (existsSync("styles.css")) {
+        copyFileSync("styles.css", `${targetDir}/styles.css`);
+    }
+};
+
+copyFiles();
 
 if (prod) {
     await context.rebuild();

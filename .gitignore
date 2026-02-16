@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
-main.js
-main.css
+
 styles.css.map
 version-bump.mjs.map
 .idea/
